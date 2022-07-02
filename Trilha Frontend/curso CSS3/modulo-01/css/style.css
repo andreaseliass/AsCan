@@ -1,0 +1,227 @@
+
+/* Aula 30
+img{margin: 40px 0 0 60px; filter: blur(4px);}
+*/
+
+/* Aula 28
+*{margin: 0; padding: 0;}
+nav{width: 100vw; height: 80px; background-color: blue;}
+.banner{width: 100vw; height: calc(100vh - 80px); background-color: red;}
+*/
+
+/* Aula 27
+.noticia:target{
+    background-color: rgb(78, 78, 124);
+    padding: 10px;
+}
+*/
+
+/* Aula 26
+:root{
+    --bg-color: blue;
+    --cor-do-texto: white;
+    --espacamento: 20px;
+}
+#div1{
+    background-color: var(--bg-color); 
+    color: var(--cor-do-texto); 
+    padding: var(--espacamento)
+}
+*/
+
+/* Aula 22
+body{
+    background-color: rgba(255, 0, 0, 0.623);
+    background-image: url(./modulo01/matrix.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+*/
+
+/* Aula 21
+#exemplo{width: 200px; height: 200px; background-color: red; transition: all 2s linear;}
+#exemplo:hover{width: 350px; height: 350px; background-color: green;}
+*/
+
+/* Aula 20
+#exemplo01{border-style: solid; border-width: 8px;border-color: red;}
+#exemplo02{border: solid 5px red;}
+#exemplo03{border-left: groove 10px green;border-right: solid 5px red;border-top: dotted 2px blue;border-bottom: double 5px yellow;}
+#exemplo04{border: solid 5px red; outline: dotted 10px blue;}
+*/
+
+/* Aula 19
+#conteudo{width: 600px; height: 1200px; background-color: red; position: relative;}
+#texto{width: 500px; background-color: green; 
+    position: fixed; left: 0px; top: 40px;}
+*/
+
+/* Aula 18
+#base{
+    background-color: green; width: 600px; height: 600px;
+}
+#esquerda{
+    background-color: red; width: 300px; height: 300px; float: left;
+}
+#direita{
+    background-color: blue; width: 300px; height: 300px; float: right;
+}
+*/
+
+/* Aula 17
+#cores{
+    width: 200px; height: 200px; 
+    background: radial-gradient(red, green);
+*/
+
+/* Aula 16
+#cores{
+    width: 200px; height: 200px; background-color: rgba(82, 189, 87, 0.555); 
+}
+*/
+
+/* Aula 14
+h1{
+    font-family: 'Saira Stencil One', cursive;
+}
+*/
+
+/* Aula 13
+*{
+    font-size: 100%;
+}
+p{
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-variant: normal;
+    font-size: 1em;
+}
+*/
+/* Aula 12
+#bloco{background-color: green; width: 300px; height: 150px; border-radius: 20px 50px 100px 200px;} */
+/* Aula 11
+#conteudo{background-color: red; width: 300px; height: 70px; overflow: auto;}
+
+#conteudo p{opacity: 0.5;} */
+/* Aula 10
+*{box-sizing: border-box;}
+#conteudo{background-color: red; width: 300px; padding: 20px; box-shadow: 10px 10px 5px green;} */
+/* Aulas 8 e 9
+p{color: red; text-align:justify; text-indent: 20px; line-height: 25px; direction: ltr; letter-spacing: 5px; word-spacing: -2px;}
+h1{text-align: left; text-decoration: underline; text-shadow: 3px 3px 4px red;}
+h2{text-align: right; text-decoration: overline;}
+h3{text-align: center; text-decoration: none;} */
+/*  
+Aula 7
+#exemplo{
+    background-color: green;
+    color: #fff;
+    width: 500px;
+    height: 100px;
+     padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px; 
+    padding: 10px 20px 30px 30px
+
+} */
+/* #exemplo2{
+    background-color: red;
+    color: #fff;
+    width: 500px;
+    margin: 20px 30px 20px 40px;;
+    padding: 10px 20px 30px 30px
+
+    /* padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px; 
+    
+    /* margin-top:20px;
+    margin-left:20px; 
+    
+} */
+
+/* Aula 6
+#conteudo{
+    background-color: green;
+    color: #fff;
+    max-width: 500px;
+    max-height: 100px;
+    padding: 20px;
+
+} */
+
+
+/* Aula 5
+.texto-principal{
+    color:red;
+    font-size: 50px;
+    text-align: center;
+}
+
+.fundo-principal{
+    background-color:green;
+    padding: 20px;
+}
+
+#conteudo{
+    background-color: blue;
+    padding:20px;
+    color:green;
+} */
+
+/* Aula 4
+h1, h2, p{ 
+    color:green;
+    text-align: center;
+    font-size: 12px;
+} */
+
+
+
+/* Aulas 2 e 3
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color:blue;
+    font-size: 50px;
+}
+
+p{
+    color:green;
+    font-size: 12px;
+
+}
+
+input[type="text"]{
+    width: 200px;
+    background-color: #ccc;
+    height: 35px;
+    border: none;
+}
+input[name="email"]{
+    width: 200px;
+    background-color: #ccc;
+    height: 35px;
+    border: none;
+}
+input[type="submit"]{
+    width: 50px;
+    background-color: green;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+} */
+
+/* Aula 1
+h1{
+    color: green;
+    font-size: 60px;
+    font-family: tahoma;
+} */
