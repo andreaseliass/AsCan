@@ -10,7 +10,7 @@ function Navbar(){
                 <Link to="/">
                     <img src={logo} alt='Star Wars' height='114px' width='189px'/>
                 </Link>
-                <ul class={styles.list}>
+                <ul className={styles.list}>
                     <li className={styles.item}><Link to="/">Home</Link></li>
                     <li className={styles.item}><Link to="/projects">Projetos</Link></li>
                     <li className={styles.item}><Link to="/company">Empresa</Link></li>
