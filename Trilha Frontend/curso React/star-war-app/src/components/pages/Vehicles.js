@@ -2,33 +2,30 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
-const filmsURL = "https://swapi.dev/api/vehicles/";
+const vehiclesURL = "https://swapi.dev/api/vehicles/";
 
 const Vehicles = () => {
 
-    const [personagens, setFilmes] = useState([]);
+    const [veiculos, setVeiculos] = useState([]);
     
-    const getPersonagens = async (url) => {
+    const getVeiculos = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
-        setFilmes(data.results);
+        setVeiculos(data.results);
   };
   
   useEffect(() => {
-    const swpersonagens = `${filmsURL}`;
-    console.log(swpersonagens);
-    getPersonagens(swpersonagens);
+    getVeiculos(vehiclesURL);
   }, []);
 
-  console.log(personagens);
 
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Veículos:</h2>
-      {personagens && personagens.map((personagem) => <p>{personagem.name}</p>)}
+      {veiculos && veiculos.map((veiculo) => <p>{veiculo.name}</p>)}
       {/* <div className="movies-container">
-        {personagens.length > 0 &&
-          personagens.map((film) => { film.title; })}
+        {veiculos.length > 0 &&
+          veiculos.map((veiculo) => { veiculo.title; })}
       </div> */}
     </div>
   );

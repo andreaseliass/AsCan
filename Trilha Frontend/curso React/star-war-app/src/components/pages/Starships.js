@@ -2,33 +2,30 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
-const filmsURL = "https://swapi.dev/api/starships/";
+const starchipsURL = "https://swapi.dev/api/starships/";
 
 const Starchips = () => {
 
-    const [personagens, setFilmes] = useState([]);
+    const [naves, setNaves] = useState([]);
     
-    const getPersonagens = async (url) => {
+    const getNaves = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
-        setFilmes(data.results);
+        setNaves(data.results);
   };
   
   useEffect(() => {
-    const swpersonagens = `${filmsURL}`;
-    console.log(swpersonagens);
-    getPersonagens(swpersonagens);
+    getNaves(starchipsURL);
   }, []);
 
-  console.log(personagens);
 
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Naves:</h2>
-      {personagens && personagens.map((personagem) => <p>{personagem.name}</p>)}
+      {naves && naves.map((nave) => <p>{nave.name}</p>)}
       {/* <div className="movies-container">
-        {personagens.length > 0 &&
-          personagens.map((film) => { film.title; })}
+        {naves.length > 0 &&
+          naves.map((film) => { film.title; })}
       </div> */}
     </div>
   );

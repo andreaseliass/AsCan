@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
-const filmsURL = "https://swapi.dev/api/people";
+const peopleURL = "https://swapi.dev/api/people";
 
 const People = () => {
 
@@ -15,12 +15,8 @@ const People = () => {
   };
   
   useEffect(() => {
-    const swpersonagens = `${filmsURL}`;
-    console.log(swpersonagens);
-    getPersonagens(swpersonagens);
+    getPersonagens(peopleURL);
   }, []);
-
-  console.log(personagens);
 
   return (
     <div className={styles.containervalores}>

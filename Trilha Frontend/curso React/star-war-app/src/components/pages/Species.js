@@ -2,33 +2,29 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
-const filmsURL = "https://swapi.dev/api/species/";
+const speciesURL = "https://swapi.dev/api/species/";
 
 const Species = () => {
 
-    const [personagens, setFilmes] = useState([]);
+    const [especies, setEspecies] = useState([]);
     
-    const getPersonagens = async (url) => {
+    const getEspecies = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
-        setFilmes(data.results);
+        setEspecies(data.results);
   };
   
   useEffect(() => {
-    const swpersonagens = `${filmsURL}`;
-    console.log(swpersonagens);
-    getPersonagens(swpersonagens);
+    getEspecies(speciesURL);
   }, []);
-
-  console.log(personagens);
 
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Espécies:</h2>
-      {personagens && personagens.map((personagem) => <p>{personagem.name}</p>)}
+      {especies && especies.map((especie) => <p>{especie.name}</p>)}
       {/* <div className="movies-container">
-        {personagens.length > 0 &&
-          personagens.map((film) => { film.title; })}
+        {especies.length > 0 &&
+          especies.map((especie) => { especie.title; })}
       </div> */}
     </div>
   );

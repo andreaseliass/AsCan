@@ -15,12 +15,10 @@ const Films = () => {
   };
   
   useEffect(() => {
-    const swfilmes = `${filmsURL}`;
-    console.log(swfilmes);
-    getFilmes(swfilmes);
+    getFilmes(filmsURL);
   }, []);
 
-  console.log(filmes);
+
 
   return (
     <div className={styles.containervalores}>
