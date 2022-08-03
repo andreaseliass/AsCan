@@ -23,11 +23,10 @@ const Films = () => {
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Filmes:</h2>
-      {filmes && filmes.map((filme) => <p>{filme.title}</p>)}
-      {/* <div className="movies-container">
-        {filmes.length > 0 &&
-          filmes.map((film) => { film.title; })}
-      </div> */}
+      <div className={styles.container}>
+        {filmes.length === 0 && <p>Carregando...</p>}
+        {filmes.length > 0 && filmes.map((filme) => <p>{filme.title}</p>)}
+      </div>
     </div>
   );
 };

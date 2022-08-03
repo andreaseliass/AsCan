@@ -22,11 +22,10 @@ const Starchips = () => {
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Naves:</h2>
-      {naves && naves.map((nave) => <p>{nave.name}</p>)}
-      {/* <div className="movies-container">
-        {naves.length > 0 &&
-          naves.map((film) => { film.title; })}
-      </div> */}
+      <div className={styles.container}>
+        {naves.length === 0 && <p>Carregando...</p>}
+        {naves.length > 0 && naves.map((nave) => <p>{nave.name}</p>)}
+      </div>
     </div>
   );
 };

@@ -21,11 +21,10 @@ const Species = () => {
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Espécies:</h2>
-      {especies && especies.map((especie) => <p>{especie.name}</p>)}
-      {/* <div className="movies-container">
-        {especies.length > 0 &&
-          especies.map((especie) => { especie.title; })}
-      </div> */}
+      <div className={styles.container}>
+        {especies.length === 0 && <p>Carregando...</p>}
+        {especies.length > 0 && especies.map((especie) => <p>{especie.name}</p>)}
+      </div>
     </div>
   );
 };

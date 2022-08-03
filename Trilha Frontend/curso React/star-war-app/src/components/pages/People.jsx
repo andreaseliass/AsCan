@@ -21,11 +21,10 @@ const People = () => {
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Personagens:</h2>
-      {personagens && personagens.map((personagem) => <p>{personagem.name}</p>)}
-      {/* <div className="movies-container">
-        {personagens.length > 0 &&
-          personagens.map((film) => { film.title; })}
-      </div> */}
+      <div className={styles.container}>
+        {personagens.length === 0 && <p>Carregando...</p>}
+        {personagens.length > 0 && personagens.map((personagem) => <p>{personagem.name}</p>)}
+      </div>
     </div>
   );
 };

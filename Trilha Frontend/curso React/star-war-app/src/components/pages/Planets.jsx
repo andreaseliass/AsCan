@@ -22,11 +22,10 @@ const Planets = () => {
   return (
     <div className={styles.containervalores}>
       <h2 className={styles.valor}>Planetas:</h2>
-      {planetas && planetas.map((planeta) => <p>{planeta.name}</p>)}
-      {/* <div className="movies-container">
-        {planetas.length > 0 &&
-          planetas.map((film) => { planeta.title; })}
-      </div> */}
+      <div className={styles.container}>
+        {planetas.length === 0 && <p>Carregando...</p>}
+        {planetas.length > 0 && planetas.map((planeta) => <p>{planeta.name}</p>)}
+      </div>
     </div>
   );
 };
