@@ -10,11 +10,10 @@ const Detalhesfilmes = ({filme}) => {
         
         <button onClick={()=>setShow(!show)} >{filme.title}</button>
         <div className={styles.detalhes}>
-            {show?<p>Episódio: {filme.episode_id}</p>:null}
-            {show?<p>Diretor: {filme.director}</p>:null}
-            {show?<p>Produtor: {filme.producer}</p>:null}
-            {show?<p>Data de lançamento: {filme.release_date}</p>:null}
-            {show?<p>Data de lançamento: {filme}</p>:null}
+            {show?<p><b>Episódio: </b>{filme.episode_id}</p>:null}
+            {show?<p><b>Diretor: </b>{filme.director}</p>:null}
+            {show?<p><b>Produtor: </b>{filme.producer}</p>:null}
+            {show?<p><b>Data de lançamento: </b>{filme.release_date}</p>:null}
             {show?<br></br>:null}
         </div>
     </div>

@@ -24,7 +24,7 @@ const People = () => {
       <h2 className={styles.valor}>Personagens:</h2>
       <div className={styles.container}>
         {personagens.length === 0 && <p>Carregando...</p>}
-        {personagens.length > 0 && personagens.map((personagens) => <Detalhespeople personagens={personagens} />)}
+        {personagens.length > 0 && personagens.map((personagens) => <Detalhespeople personagens={personagens} key={personagens.name} />)}
       </div>
     </div>
   );

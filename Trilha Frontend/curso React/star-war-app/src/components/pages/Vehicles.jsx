@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
+import Detalhesvehicles from "./Detalhesvehicles";
+
 const vehiclesURL = "https://swapi.dev/api/vehicles/";
 
 const Vehicles = () => {
@@ -24,7 +26,7 @@ const Vehicles = () => {
       <h2 className={styles.valor}>Veículos:</h2>
       <div className={styles.container}>
         {veiculos.length === 0 && <p>Carregando...</p>}
-        {veiculos.length > 0 && veiculos.map((veiculo) => <p>{veiculo.name}</p>)}
+        {veiculos.length > 0 && veiculos.map((veiculo) =><Detalhesvehicles veiculo={veiculo} key={veiculo.name} />)}
       </div> 
     </div>
   );

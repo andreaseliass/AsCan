@@ -9,12 +9,12 @@ const Detalhesplanets = ({planetas}) => {
     return (<div className={styles.containervalores}>
         <button onClick={()=>setShow(!show)} >{planetas.name}</button>
         <div className={styles.detalhes}>
-            {show?<p>Clima: {planetas.climate}</p>:null}
-            {show?<p>População: {planetas.population}</p>:null}
-            {show?<p>Diâmetro: {planetas.diameter}</p>:null}
-            {show?<p>Terreno: {planetas.terrain}</p>:null}
-            {show?<p>Período de rotação: {planetas.rotation_period} horas</p>:null}
-            {show?<p>Período Orbital: {planetas.orbital_period} dias</p>:null}
+            {show?<p><b>Clima: </b> {planetas.climate}</p>:null}
+            {show?<p><b>População: </b> {planetas.population}</p>:null}
+            {show?<p><b>Diâmetro: </b> {planetas.diameter}</p>:null}
+            {show?<p><b>Terreno: </b> {planetas.terrain}</p>:null}
+            {show?<p><b>Período de rotação: </b> {planetas.rotation_period} horas</p>:null}
+            {show?<p><b>Período Orbital: </b> {planetas.orbital_period} dias</p>:null}
             {show?<br></br>:null}
         </div>
     </div>

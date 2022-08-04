@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Detalhesstarships from "./Detalhesstarships";
+
 
 import styles from './Paginas.module.css'
 
@@ -24,7 +26,7 @@ const Starchips = () => {
       <h2 className={styles.valor}>Naves:</h2>
       <div className={styles.container}>
         {naves.length === 0 && <p>Carregando...</p>}
-        {naves.length > 0 && naves.map((nave) => <p>{nave.name}</p>)}
+        {naves.length > 0 && naves.map((nave) => <Detalhesstarships nave={nave} key={nave.name} />)}
       </div>
     </div>
   );

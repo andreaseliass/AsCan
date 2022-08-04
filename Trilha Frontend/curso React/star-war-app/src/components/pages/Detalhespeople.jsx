@@ -9,12 +9,12 @@ const Detalhespeople = ({personagens}) => {
     return (<div className={styles.containervalores}>
         <button onClick={()=>setShow(!show)} >{personagens.name}</button>
         <div className={styles.detalhes}>
-            {show?<p>Gênero: {personagens.gender}</p>:null}
-            {show?<p>Altura: {personagens.height} cm</p>:null}
-            {show?<p>Peso: {personagens.mass} kg</p>:null}
-            {show?<p>Ano de nascimento: {personagens.birth_year}</p>:null}
-            {show?<p>Cor do cabelo: {personagens.hair_color}</p>:null}
-            {show?<p>Cor dos olhos: {personagens.eye_color}</p>:null}
+            {show?<p><b>Gênero: </b> {personagens.gender}</p>:null}
+            {show?<p><b>Altura: </b> {personagens.height} cm</p>:null}
+            {show?<p><b>Peso: </b> {personagens.mass} kg</p>:null}
+            {show?<p><b>Ano de nascimento: </b> {personagens.birth_year}</p>:null}
+            {show?<p><b>Cor do cabelo: </b> {personagens.hair_color}</p>:null}
+            {show?<p><b>Cor dos olhos: </b> {personagens.eye_color}</p>:null}
             {show?<br></br>:null}
         </div>
     </div>

@@ -26,7 +26,7 @@ const Planets = () => {
       <h2 className={styles.valor}>Planetas:</h2>
       <div className={styles.container}>
         {planetas.length === 0 && <p>Carregando...</p>}
-        {planetas.length > 0 && planetas.map((planetas) => <Detalhesplanets planetas={planetas} />)}
+        {planetas.length > 0 && planetas.map((planetas) => <Detalhesplanets planetas={planetas} key={planetas.name} />)}
       </div>
     </div>
   );
