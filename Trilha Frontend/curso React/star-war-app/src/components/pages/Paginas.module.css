@@ -7,3 +7,22 @@
     color: #FFD700;
 
 }
+
+.detalhes{
+    color: white;
+    padding-left: 20px;
+}
+
+.button.link{
+    background-color: red;
+    border: none;
+}
+
+.containervalores button{
+    background: none;
+    cursor: pointer;
+    font-family: "News Cycle", sans-serif;
+    color: #FFD700;
+    font-size: larger;
+
+}
