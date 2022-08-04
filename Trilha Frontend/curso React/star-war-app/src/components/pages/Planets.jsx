@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
+import Detalhesplanets from "./Detalhesplanets";
+
 const planetsURL = "https://swapi.dev/api/planets";
 
 const Planets = () => {
@@ -24,7 +26,7 @@ const Planets = () => {
       <h2 className={styles.valor}>Planetas:</h2>
       <div className={styles.container}>
         {planetas.length === 0 && <p>Carregando...</p>}
-        {planetas.length > 0 && planetas.map((planeta) => <p>{planeta.name}</p>)}
+        {planetas.length > 0 && planetas.map((planetas) => <Detalhesplanets planetas={planetas} />)}
       </div>
     </div>
   );
