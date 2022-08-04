@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import styles from './Paginas.module.css'
 
-import Detalhes from "./Detalhes";
+import Detalhesfilmes from "./Detalhesfilmes";
 
 
 
@@ -29,7 +29,7 @@ const Films = () => {
       <h2 className={styles.valor}>Filmes:</h2>
       <div className={styles.container}>
         {filmes.length === 0 && <p>Carregando...</p>}
-        {filmes && filmes.map((filme) => <Detalhes filme={filme} />)}
+        {filmes && filmes.map((filme) => <Detalhesfilmes filme={filme} />)}
       </div>
     </div>
   );
