@@ -15,7 +15,8 @@ const Films = () => {
     const getFilmes = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
-        setFilmes(data.results);
+        const results = data.results.sort((filmea, filmeb)=> filmea.episode_id > filmeb.episode_id ? 1 : -1);
+        setFilmes(results);
   };
   
   useEffect(() => {
@@ -29,7 +30,7 @@ const Films = () => {
       <h2 className={styles.valor}>Filmes:</h2>
       <div className={styles.container}>
         {filmes.length === 0 && <p>Carregando...</p>}
-        {filmes && filmes.map((filme) => <Detalhesfilmes filme={filme} />)}
+        {filmes && filmes.map((filme) => <Detalhesfilmes filme={filme} key={filme.episode_id}/>)}
       </div>
     </div>
   );

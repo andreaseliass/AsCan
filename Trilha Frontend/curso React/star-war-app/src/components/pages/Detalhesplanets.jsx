@@ -13,8 +13,8 @@ const Detalhesplanets = ({planetas}) => {
             {show?<p>População: {planetas.population}</p>:null}
             {show?<p>Diâmetro: {planetas.diameter}</p>:null}
             {show?<p>Terreno: {planetas.terrain}</p>:null}
-            {show?<p>Período de rotação: {planetas.rotation_period}</p>:null}
-            {show?<p>Período Orbital: {planetas.orbital_period}</p>:null}
+            {show?<p>Período de rotação: {planetas.rotation_period} horas</p>:null}
+            {show?<p>Período Orbital: {planetas.orbital_period} dias</p>:null}
             {show?<br></br>:null}
         </div>
     </div>
