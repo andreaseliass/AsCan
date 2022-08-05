@@ -55,3 +55,12 @@
   .img{
     align-self: center;
   }
+
+  .containervalores a{
+    background: none;
+    cursor: pointer;
+    font-family: "News Cycle", sans-serif;
+    color: #FFD700;
+    font-size: 18px;
+    text-decoration: none;
+}

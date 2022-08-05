@@ -1,23 +1,41 @@
 import { useEffect, useState } from "react";
 import Detalhespeople from "./Detalhespeople";
-
 import styles from './Paginas.module.css'
-
-const peopleURL = "https://swapi.dev/api/people";
 
 const People = () => {
 
     const [personagens, setPeople] = useState([]);
+
+        
+    async function getPeople() {
+      let allData = [];
+      let temmaispaginas = true;
+      let currentPage = 0;
     
-    const getPersonagens = async (url) => {
-        const res = await fetch(url);
-        const data = await res.json();
-        setPeople(data.results);
-  };
+      while(temmaispaginas) {
+        currentPage++;
+        const response = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`)
+        let data = await response.json();
+        const total_pages = 9;
+        allData.push(data.results); //allData é um array de arrays
+        temmaispaginas = currentPage < total_pages; //quando for false sai do while
+      }
+      //transformando um array de arrays em apenas um array:
+      let resultados = []
+      for (var i=0; i < 9; i++) {
+        let x = allData[i]
+        for (var k=0; k < x.length; k++){
+          resultados.push(x[k])
+        }
+    } 
+    setPeople(resultados);
+    }
   
   useEffect(() => {
-    getPersonagens(peopleURL);
+    getPeople();
   }, []);
+  
+
 
   return (
     <div className={styles.containervalores}>

@@ -9,13 +9,18 @@ const Detalhesfilmes = ({filme}) => {
     return (<div className={styles.containervalores}>
         
         <button onClick={()=>setShow(!show)} >{filme.title}</button>
+        {show && (
         <div className={styles.detalhes}>
-            {show?<p><b>Episódio: </b>{filme.episode_id}</p>:null}
-            {show?<p><b>Diretor: </b>{filme.director}</p>:null}
-            {show?<p><b>Produtor: </b>{filme.producer}</p>:null}
-            {show?<p><b>Data de lançamento: </b>{filme.release_date}</p>:null}
-            {show?<br></br>:null}
-        </div>
+            <p><b>Episódio: </b>{filme.episode_id}</p>
+            <p><b>Diretor: </b>{filme.director}</p>
+            <p><b>Produtor: </b>{filme.producer}</p>
+            <p><b>Data de lançamento: </b>{filme.release_date.split('-')[2] +
+              '/' +
+              filme.release_date.split('-')[1] +
+              '/' +
+              filme.release_date.split('-')[0]}</p>
+            <br></br>
+        </div>)}
     </div>
     );
 }
