@@ -4,21 +4,39 @@ import styles from './Paginas.module.css'
 
 import Detalhesvehicles from "./Detalhesvehicles";
 
-const vehiclesURL = "https://swapi.dev/api/vehicles/";
-
 const Vehicles = () => {
 
-    const [veiculos, setVeiculos] = useState([]);
-    
-    const getVeiculos = async (url) => {
-        const res = await fetch(url);
-        const data = await res.json();
-        setVeiculos(data.results);
-  };
+  const [veiculos, setVehicles] = useState([]);
+      
+  async function getPeople() {
+    let allData = [];
+    let temmaispaginas = true;
+    let currentPage = 0;
   
-  useEffect(() => {
-    getVeiculos(vehiclesURL);
-  }, []);
+    while(temmaispaginas) {
+      currentPage++;
+      const response = await fetch(`https://swapi.dev/api/vehicles/?page=${currentPage}`)
+      let data = await response.json();
+      const total_pages = 4;
+      allData.push(data.results); //allData é um array de arrays
+      temmaispaginas = currentPage < total_pages; //quando for false sai do while
+    }
+    //transformando um array de arrays em apenas um array:
+    let resultados = []
+    for (var i=0; i < 4; i++) {
+      let x = allData[i]
+      for (var k=0; k < x.length; k++){
+        resultados.push(x[k])
+      }
+  } 
+  setVehicles(resultados);
+  }
+
+useEffect(() => {
+  getPeople();
+}, []);
+
+
 
 
   return (

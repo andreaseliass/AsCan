@@ -5,7 +5,6 @@ import styles from './Paginas.module.css'
 const People = () => {
 
     const [personagens, setPeople] = useState([]);
-
         
     async function getPeople() {
       let allData = [];
@@ -35,7 +34,6 @@ const People = () => {
     getPeople();
   }, []);
   
-
 
   return (
     <div className={styles.containervalores}>

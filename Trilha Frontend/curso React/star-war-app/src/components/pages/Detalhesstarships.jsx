@@ -12,8 +12,8 @@ const Detalhesstarships = ({nave}) => {
         <div className={styles.detalhes}>
             {show?<p><b>Modelo: </b> {nave.model}</p>:null}
             {show?<p><b>Fabricante: </b> {nave.manufacturer}</p>:null}
-            {show?<p><b>Custo em créditos: </b> {nave.cost_in_credits} cm</p>:null}
-            {show?<p><b>Comprimento: </b> {nave.length}</p>:null}
+            {show?<p><b>Custo em créditos: </b> {nave.cost_in_credits} </p>:null}
+            {show?<p><b>Comprimento: </b> {nave.length} </p>:null}
             {show?<p><b>Velocidade máxima na atmosfera: </b> {nave.max_atmosphering_speed}</p>:null}
             {show?<p><b>Equipe - quantidade: </b> {nave.crew}</p>:null}
             {show?<p><b>Passageiros: </b> {nave.passengers} </p>:null}

@@ -1,24 +1,39 @@
 import { useEffect, useState } from "react";
-
 import styles from './Paginas.module.css'
-
 import Detalhesplanets from "./Detalhesplanets";
 
-const planetsURL = "https://swapi.dev/api/planets";
 
 const Planets = () => {
 
-    const [planetas, setPlanetas] = useState([]);
-    
-    const getPlanetas = async (url) => {
-        const res = await fetch(url);
-        const data = await res.json();
-        setPlanetas(data.results);
-  };
+  const [planetas, setPlanets] = useState([]);
+      
+  async function getPlanets() {
+    let allData = [];
+    let temmaispaginas = true;
+    let currentPage = 0;
   
-  useEffect(() => {
-    getPlanetas(planetsURL);
-  }, []);
+    while(temmaispaginas) {
+      currentPage++;
+      const response = await fetch(`https://swapi.dev/api/planets/?page=${currentPage}`)
+      let data = await response.json();
+      const total_pages = 6;
+      allData.push(data.results); //allData é um array de arrays
+      temmaispaginas = currentPage < total_pages; //quando for false sai do while
+    }
+    //transformando um array de arrays em apenas um array:
+    let resultados = []
+    for (var i=0; i < 6; i++) {
+      let x = allData[i]
+      for (var k=0; k < x.length; k++){
+        resultados.push(x[k])
+      }
+  } 
+  setPlanets(resultados);
+  }
+
+useEffect(() => {
+  getPlanets();
+}, []);
 
 
   return (

@@ -12,7 +12,7 @@ const Detalhesvehicles = ({veiculo}) => {
         <div className={styles.detalhes}>
             {show?<p><b>Modelo: </b> {veiculo.model}</p>:null}
             {show?<p><b>Fabricante: </b> {veiculo.manufacturer}</p>:null}
-            {show?<p><b>Custo em créditos: </b> {veiculo.cost_in_credits} cm</p>:null}
+            {show?<p><b>Custo em créditos: </b> {veiculo.cost_in_credits}</p>:null}
             {show?<p><b>Comprimento: </b> {veiculo.length}</p>:null}
             {show?<p><b>Velocidade máxima na atmosfera: </b> {veiculo.max_atmosphering_speed}</p>:null}
             {show?<p><b>Equipe - quantidade: </b> {veiculo.crew}</p>:null}
