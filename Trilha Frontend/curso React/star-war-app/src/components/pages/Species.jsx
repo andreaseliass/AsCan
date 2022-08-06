@@ -27,6 +27,7 @@ const Species = () => {
           resultados.push(x[k])
         }
     } 
+    resultados = resultados.sort((especie1, especie2)=> especie1.name > especie2.name ? 1 : -1);
       setEspecies(resultados);
     }
   

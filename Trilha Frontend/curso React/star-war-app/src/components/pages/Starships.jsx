@@ -27,6 +27,7 @@ const Starchips = () => {
         resultados.push(x[k])
       }
   } 
+  resultados = resultados.sort((nave1, nave2)=> nave1.name > nave2.name ? 1 : -1);
   setStarships(resultados);
   }
 

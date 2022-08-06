@@ -28,6 +28,7 @@ const Planets = () => {
         resultados.push(x[k])
       }
   } 
+  resultados = resultados.sort((planet1, planet2)=> planet1.name > planet2.name ? 1 : -1);
   setPlanets(resultados);
   }
 

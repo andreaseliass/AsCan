@@ -27,6 +27,7 @@ const People = () => {
           resultados.push(x[k])
         }
     } 
+    resultados = resultados.sort((person1, person2)=> person1.name > person2.name ? 1 : -1);
     setPeople(resultados);
     }
   

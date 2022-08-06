@@ -29,6 +29,7 @@ const Vehicles = () => {
         resultados.push(x[k])
       }
   } 
+  resultados = resultados.sort((veiculo1, veiculo2)=> veiculo1.name > veiculo2.name ? 1 : -1);
   setVehicles(resultados);
   }
 
