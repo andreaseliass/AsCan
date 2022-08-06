@@ -1,10 +1,18 @@
 import styles from './Paginas.module.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 
 
 const Detalhespeople = ({personagens}) => {
 
     const[show,setShow]=useState(false);
+    const params = useLocation();
+
+    useEffect(() => {
+        if (params.search === `?id=${personagens.url.split('/')[5] - 1}`) {
+            setShow(true);
+        }
+    }, [params]);
 
     return (<div className={styles.containervalores}>
         <button onClick={()=>setShow(!show)} >{personagens.name}</button>

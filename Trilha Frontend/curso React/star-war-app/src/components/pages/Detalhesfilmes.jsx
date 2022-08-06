@@ -1,5 +1,6 @@
 import styles from './Paginas.module.css'
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 
 const Detalhesfilmes = ({filme}) => {
@@ -42,7 +43,14 @@ const Detalhesfilmes = ({filme}) => {
             
             <div><b>Personagens:</b>
             {personagens.length === 0 && <p>Carregando...</p>}
-            {personagens.length > 0 && filme.characters.map((personagem) => <p key={personagem}>{personagens[personagem.split('/')[5]-1].name}</p>)}</div>
+            {personagens.length > 0 &&
+                            filme.characters.map((personagem) => (
+                                <Link to={`/people?id=${personagem.split('/')[5] - 1}`}>
+                                    <p key={personagem}>
+                                        {personagens[personagem.split('/')[5] - 1].name}
+                                    </p>
+                                </Link>
+                            ))}</div>
             <br></br>
         </div>)}
     </div>
