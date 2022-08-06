@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import styles from './Paginas.module.css'
-
 import Detalhesfilmes from "./Detalhesfilmes";
 
 

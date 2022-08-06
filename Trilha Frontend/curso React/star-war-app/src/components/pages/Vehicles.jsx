@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import styles from './Paginas.module.css'
-
 import Detalhesvehicles from "./Detalhesvehicles";
 
 const Vehicles = () => {
@@ -36,9 +34,6 @@ const Vehicles = () => {
 useEffect(() => {
   getPeople();
 }, []);
-
-
-
 
   return (
     <div className={styles.containervalores}>
