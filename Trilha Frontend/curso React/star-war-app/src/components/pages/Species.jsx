@@ -10,16 +10,27 @@ const Species = () => {
       let allData = [];
       let temmaispaginas = true;
       let currentPage = 0;
-    
-      while(temmaispaginas) {
-        currentPage++;
-        const response = await fetch(`https://swapi.dev/api/species/?page=${currentPage}`)
+
+      let response = {}
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('id');
+
+      if (myParam){
+        response = await fetch(`https://swapi.dev/api/species/${myParam}`)
         let data = await response.json();
-        const total_pages = 4;
-        allData.push(...data.results); 
-        temmaispaginas = currentPage < total_pages; //quando for false sai do while
+        allData.push(data); 
       }
-   
+      else {
+        while(temmaispaginas) {
+          currentPage++;
+          const response = await fetch(`https://swapi.dev/api/species/?page=${currentPage}`)
+          let data = await response.json();
+          const total_pages = 4;
+          allData.push(...data.results); 
+          temmaispaginas = currentPage < total_pages; //quando for false sai do while
+        }
+      }
     allData = allData.sort((especie1, especie2)=> especie1.name > especie2.name ? 1 : -1);
       setEspecies(allData);
     }

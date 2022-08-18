@@ -11,14 +11,27 @@ const People = () => {
       let temmaispaginas = true;
       let currentPage = 0;
     
-      while(temmaispaginas) {
-        currentPage++;
-        const response = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`)
+      let response = {}
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('id');
+
+      if (myParam){
+        response = await fetch(`https://swapi.dev/api/people/${myParam}`)
         let data = await response.json();
-        const total_pages = 9;
-        allData.push(...data.results); //allData é um array de arrays
-        temmaispaginas = currentPage < total_pages; //quando for false sai do while
+        allData.push(data); 
       }
+      else {      
+        while(temmaispaginas) {
+          currentPage++;
+          response = await fetch(`https://swapi.dev/api/people/?page=${currentPage}`)
+          let data = await response.json();
+          const total_pages = 9;
+          allData.push(...data.results); 
+          temmaispaginas = currentPage < total_pages; //quando for false sai do while
+       }
+      }
+
     allData = allData.sort((person1, person2)=> person1.name > person2.name ? 1 : -1);
     setPeople(allData);
     }

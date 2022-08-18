@@ -1,10 +1,18 @@
 import styles from './Paginas.module.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Detalhesvehicles = ({veiculo}) => {
 
     const[show,setShow]=useState(false);
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('id');
+
+    useEffect(() => {
+        if (myParam) {
+            setShow(true);
+        }
+    }, [myParam]);
 
     return (<div className={styles.containervalores}>
         

@@ -10,26 +10,31 @@ const Vehicles = () => {
     let allData = [];
     let temmaispaginas = true;
     let currentPage = 0;
-  
-    while(temmaispaginas) {
-      currentPage++;
-      const response = await fetch(`https://swapi.dev/api/vehicles/?page=${currentPage}`)
-      let data = await response.json();
-      const total_pages = 4;
-      allData.push(data.results); //allData é um array de arrays
-      temmaispaginas = currentPage < total_pages; //quando for false sai do while
-    }
-    //transformando um array de arrays em apenas um array:
-    let resultados = []
-    for (var i=0; i < 4; i++) {
-      let x = allData[i]
-      for (var k=0; k < x.length; k++){
-        resultados.push(x[k])
+    let response = {}
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('id');
+
+      if (myParam){
+        response = await fetch(`https://swapi.dev/api/vehicles/${myParam}`)
+        let data = await response.json();
+        allData.push(data); 
       }
+      else {
+        while(temmaispaginas) {
+          currentPage++;
+          const response = await fetch(`https://swapi.dev/api/vehicles/?page=${currentPage}`)
+          let data = await response.json();
+          const total_pages = 4;
+          allData.push(...data.results); //allData é um array de arrays
+          temmaispaginas = currentPage < total_pages; //quando for false sai do while
+        }
+      }
+      allData = allData.sort((veiculo1, veiculo2)=> veiculo1.name > veiculo2.name ? 1 : -1);
+      setVehicles(allData);
+
   } 
-  resultados = resultados.sort((veiculo1, veiculo2)=> veiculo1.name > veiculo2.name ? 1 : -1);
-  setVehicles(resultados);
-  }
+
 
 useEffect(() => {
   getPeople();
